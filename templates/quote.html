@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Master</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>✨Let's Begin✨</h2>
+    <p>Remaining time: {{ remaining_time }} seconds</p>
+
+    {% if message %}
+        <p style="color: red;">{{ message }}</p> <!-- Display the message if it's available -->
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('quote') }}">
+        <input type="text" name="quote" placeholder="Enter your quote" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

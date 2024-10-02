@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit a Quote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Submit a New Quote</h2>
+    <form method="POST" action="{{ url_for('submit') }}">
+        <input type="text" name="quote" placeholder="Enter your quote" required>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+    <footer>Made with 💖 in space!</footer>
+</body>
+</html>
